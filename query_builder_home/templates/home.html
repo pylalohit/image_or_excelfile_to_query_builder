@@ -1,0 +1,29 @@
+<html>
+    <head><title> Demo </title></head>
+    <body>
+        <div>
+            <h4>Instructions</h4>
+                1. Upload the excel file and make sure the excel file doesnt have type errors.<br />
+                2. make you you write the data type of each attribte at the end oh its column.<br />
+                3. For a sample look the picture below.<br />
+        </div>
+
+        <br />
+        <form action="Create_Table" ,  method="POST" , enctype="multipart/form-data">
+            {% csrf_token %}
+            Upload File : <input type="file" name="filename"> <br />
+            Table Name : <input type="text" name = "tablename" placeholder="Enter the table name">
+
+            <input type="submit">
+
+        </form>
+       
+        {{result1}} <br />
+        {% for i in result2 %}
+            <div>
+                {{i}}
+            </div>
+            
+        {% endfor %}
+    </body>
+</html>
