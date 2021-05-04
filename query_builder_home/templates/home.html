@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -5,10 +6,12 @@
   <title>CodePen - Responsive Blog Card Slider </title>
   <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='./stylee.css'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href="{% static './stylee.css' %}"><link rel="stylesheet" href="{% static './style.css' %}">
+
 
 </head>
 <body>
+  
 <!-- partial:index.partial.html -->
 <div class="blog-slider">
   <div class="blog-slider__wrp swiper-wrapper">
@@ -34,9 +37,10 @@
         <span class="blog-slider__code"><h1>Query Builder</h1></span>
         <div class="blog-slider__text"><b>1.</b> all the attribute names of the respective columns should be in the first row.<br />
         <b>2.</b> all the data types of the respective columns should be in the last row.<br >
-        <br /><form action="">
-          <b>Table name :</b> <input type="text" name="" id=""><br />
-          <b>Upload Excel File :&emsp;</b> <input type="file" name="" id="" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /><br />
+        <br /><form action="Create_Table" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+          <b>Table name :</b> <input type="text" name="tablename" ><br />
+          <b>Upload Excel File :&emsp;</b> <input type="file" name="filename" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /><br />
           <br /><input type="submit" class="blog-slider__button">
         </form>
         {{result1}} <br />
@@ -68,6 +72,13 @@
           <b>Upload Excel File :&emsp;</b> <input type="file" name="filename" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /><br />
           <br /><input type="submit" class="blog-slider__button">
         </form></div>
+        {{result1}} <br />
+        {% for i in result2 %}
+            <div>
+                {{i}}
+            </div>
+            
+        {% endfor %}
         
       </div>
     </div>
@@ -76,8 +87,8 @@
   <div class="blog-slider__pagination"></div>
 </div>
 <!-- partial -->
-  <script src='./scriptt.js'></script>
-<script src='./scripttt.js'></script><script  src="./script.js"></script>
-
+{% load static %}
+  <script type = "text/javascript" src= "{% static 'scriptt.js' %}"></script>
+  <script type = "text/javascript" src= "{% static 'scripttt.js' %}"></script><script type = "text/javascript" src="{% static 'script.js' %}"></script>
 </body>
 </html>
