@@ -62,7 +62,7 @@ def Create_Table(request):
             temp = ins + temp + ');'
             Insert_Into_Table_list.append(temp)
 
-        return render(request,"home.html",{"result1":ts,"result2":Insert_Into_Table_list})
+        return render(request,"result.html",{"result1":ts,"result2":Insert_Into_Table_list})
 
 
 

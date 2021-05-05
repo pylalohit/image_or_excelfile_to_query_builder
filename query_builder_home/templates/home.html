@@ -41,19 +41,9 @@
         {% csrf_token %}
           <b>Table name :</b> <input type="text" name="tablename" ><br />
           <b>Upload Excel File :&emsp;</b> <input type="file" name="filename" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /><br />
-          <br /><input type="submit" class="blog-slider__button">
+          <br /><input type="submit" onclick="href = 'result.html' " class="blog-slider__button">
         </form>
-        {{result1}} <br />
-        {% for i in result2 %}
-            <div>
-                {{i}}
-            </div>
-            
-        {% endfor %}
-      </div>
-        <!--<div class="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div> -->
-        
-        
+      </div>                 
       </div>
     </div>
     
@@ -71,15 +61,7 @@
           <b>Table name : </b> <input type="text" name = "tablename" placeholder="Enter the table name"><br />
           <b>Upload Excel File :&emsp;</b> <input type="file" name="filename" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /><br />
           <br /><input type="submit" class="blog-slider__button">
-        </form></div>
-        {{result1}} <br />
-        {% for i in result2 %}
-            <div>
-                {{i}}
-            </div>
-            
-        {% endfor %}
-        
+        </form></div>       
       </div>
     </div>
     

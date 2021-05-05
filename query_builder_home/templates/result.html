@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #F8D5A8;
+            }
+            div{
+                font-size: 25px;
+            }
+            h1{
+                font-size: 45px;
+            }
+        </style>
+    </head>
+    <body >
+        <h1>Result</h1>
+        <div>
+            {{result1}}<br />
+        </div>
+        {% for i in result2 %}
+            <div>
+                {{i}}
+            </div>
+        {% endfor %}
+    </body>
+</html>
