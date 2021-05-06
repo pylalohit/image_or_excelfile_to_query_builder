@@ -64,6 +64,8 @@ def Create_Table(request):
 
         return render(request,"result.html",{"result1":ts,"result2":Insert_Into_Table_list})
 
+def instructions(request):
+    return render(request, "instructions.html")
 
 
 
