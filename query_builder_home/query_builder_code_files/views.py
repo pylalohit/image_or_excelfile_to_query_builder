@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request,"home.html")
+    return render(request,"cover.html")
 
 def Create_Table(request):
     import xlrd
@@ -66,6 +66,9 @@ def Create_Table(request):
 
 def instructions(request):
     return render(request, "instructions.html")
+
+def home(request):
+    return render(request,"cover.html")
 
 
 

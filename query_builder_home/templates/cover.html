@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="{% static './style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
+    </head>
+    <body >
+        
+        <div class="navbar" >
+            <div class="navbar-inner" >
+                <img src="../static/qblogo.png" width="100%" alt="">
+            </div>
+           <a href="{% url 'instructions'  %}" class="instructions">INSTRUCTIONS</a>                 
+        </div>
+        <div class="content">
+            <picture class="leftmainimg" >
+                
+                <img  class="img" src="../static/headding.png"   alt="IfItDoesntMatchAnyMedia">
+            </picture> 
+            <p class="Upload">
+                Upload . Copy . Execute
+            </p>
+            <p class="matters">
+                1.Attributes names should be in the firstrow.<br />
+                2.Attributes datatypes should be in the lastrow.<br />
+                3.To convert image to queries read INSTRUCTIONS above.<br /> 
+
+            </p>
+            <div class="form">
+                <form action="Create_Table" method="POST" enctype="multipart/form-data" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    {% csrf_token %}
+                    Enter the Table Name :  <input type="text" name="tablename" placeholder="Table Name"><br /><br />
+                    Upload the File : <input type="file" name="filename" ><br /><br />
+                    <input class="input" type="submit">
+                 </form>
+            </div>
+            
+        </div>
+    
+    </body>
+</html>

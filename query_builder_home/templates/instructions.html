@@ -1,34 +1,39 @@
+{% load static %}
 <html>
     <head>
-        <style>
-            div{
-                font-size: 25px;
-            }
-            body{
-                background-color: #F8D5A8;
-            }
-        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="{% static './style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>INSTRUCTIONS</h1>
-        <div>
+        <div class="navbar" >
+            <div class="navbar-inner" >
+                <img src="../static/qblogo.png" width="100%" alt="">
+            </div>
+           <a href="{% url 'home'  %}"  class="instructions">HOME</a>                 
+        </div>
+        
+        <div class = "instructions-content">
+            <h1 class = "instructions1">INSTRUCTIONS</h1>
             <b>1.</b> Enter the table name<br /><br />
-            <b>2.</b> Upload the excel file in the Excel to Queries slider. <br />
-            &emsp;<b>2.1</b> Scroll once downwards for Excel to Queries slider.<br />	
-            &emsp;<b>2.2</b> Excel file should be in the below format.<br /> 
-            &emsp;<b>2.3</b> All the attribute names of the respective columns should be in the first row.<br />
-            &emsp;<b>2.4</b> All the data types of the respective columns should be in the last row.<br />
-            &emsp;<b>2.5</b> Make sure there are no type errors in the file, giving an unsuitable 
+            <b>2.</b> Upload the excel file <br />
+            &emsp;<b>2.1</b> Excel file should be in the below format.<br /> 
+            &emsp;<b>2.2</b> All the attribute names of the respective columns should be in the first row.<br />
+            &emsp;<b>2.3</b> All the data types of the respective columns should be in the last row.<br />
+            &emsp;<b>2.4</b> Make sure there are no type errors in the file, giving an unsuitable 
                 datatype value in another data type such as ( ID was declared as INTEGER and given a CHARACTER).<br />
-            &emsp;<b>2.6</b> Make sure there is noisy data such as undesired symbols.<br /><br />
+            &emsp;<b>2.5</b> Make sure there is noisy data such as undesired symbols.<br /><br />
 
-            <b>3.</b> Upload the image in the image to Excel slider.<br />
-            &emsp;<b>3.1</b> Scroll twice downwards for the image to excel slider.<br />
-            &emsp;<b>3.2</b> Image should be clear and crisp without any distortion.<br />
-            &emsp;<b>3.3</b> After uploading the image the output excel file will be downloaded to your pc.<br />
+            <b>3.</b> Upload the image in the <a href="https://extracttable.com/" target="_blank">https://extracttable.com/</a>.<br />
+            &emsp;<b>3.1</b> Image should be clear and crisp without any distortion. <br />
+            &emsp;<b>3.2</b> Then complete the steps required in the site and then tick the option (Download Tables Output as ) to excel and click download.<br />
+            &emsp;<b>3.3</b> After clicking download the excel file will be downloaded to your pc.<br />
             &emsp;<b>3.4</b> Review all the cells in the output file and check there are no errors and edit 
-                the desired changes and save the excel file and then input the excel file to 
-                Excel to queries slider to get the queries output.<br /><br />
+                the desired changes and save the excel file and then upload the excel file to 
+                Query Builder or follow steps 2 to get the queries as output.<br /><br />
             <b>4.</b> Paste the output queries on my SQL workbench or oracle to create the database table.<br />
         </div>
     </body>
