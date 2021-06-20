@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
         <link rel='stylesheet' href="{% static './style.css' %}">
         <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="{% static './script.js' %}"></script>
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
     </head>
     <body >
@@ -31,11 +32,11 @@
 
             </p>
             <div class="form">
-                <form action="Create_Table" method="POST" enctype="multipart/form-data" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                <form action="Create_Table" name = 'theform' method="POST" enctype="multipart/form-data" accept=".xlsx,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
                     {% csrf_token %}
-                    Enter the Table Name :  <input type="text" name="tablename" placeholder="Table Name"><br /><br />
-                    Upload the File : <input type="file" name="filename" ><br /><br />
-                    <input class="input" type="submit">
+                    Enter the Table Name :  <input type="text" name="tablename" placeholder="Table Name"   /><br /><br />
+                    Upload the File : <input type="file" name="filename"    /><br /><br />
+                    <input class="input" type="submit"  >
                  </form>
             </div>
             

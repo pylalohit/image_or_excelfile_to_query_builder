@@ -1,26 +1,32 @@
+{% load static %}
 <html>
     <head>
-        <style>
-            body{
-                background-color: #F8D5A8;
-            }
-            div{
-                font-size: 25px;
-            }
-            h1{
-                font-size: 45px;
-            }
-        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="{% static './style.css' %}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
     </head>
-    <body >
-        <h1>Result</h1>
-        <div>
-            {{result1}}<br />
-        </div>
-        {% for i in result2 %}
-            <div>
-                {{i}}
+    <body>
+        <div class="navbar" >
+            <div class="navbar-inner" >
+                <img src="../static/qblogo.png" width="100%" alt="">
             </div>
-        {% endfor %}
+            <a href="{% url 'home'  %}"  class="instructions">HOME</a>                 
+        </div>
+                
+        <div class = "instructions-content">
+            <h1 class = "instructions1">Result</h1>
+            <div>
+                {{result1}}<br />
+            </div>
+            {% for i in result2 %}
+                <div>
+                    {{i}}
+                </div>
+            {% endfor %}
+            {% load static %}
+        </div>
     </body>
 </html>
