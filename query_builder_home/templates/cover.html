@@ -13,14 +13,14 @@
         
         <div class="navbar" >
             <div class="navbar-inner" >
-                <img src="../static/qblogo.png" width="100%" alt="">
+                <img src="{% static './qblogo.png' %}" width="100%" alt="">
             </div>
            <a href="{% url 'instructions'  %}" class="instructions">INSTRUCTIONS</a>                 
         </div>
         <div class="content">
             <picture class="leftmainimg" >
                 
-                <img  class="img" src="../static/headding.png"   alt="IfItDoesntMatchAnyMedia">
+                <img  class="img" src="{% static './headding.png' %}"   alt="IfItDoesntMatchAnyMedia">
             </picture> 
             <p class="Upload">
                 Upload . Copy . Execute
